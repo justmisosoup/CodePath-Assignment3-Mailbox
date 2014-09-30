@@ -126,6 +126,10 @@ class ViewController: UIViewController {
             
         else if gestureRecognizer.state == UIGestureRecognizerState.Ended {
             
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.msgImg.frame.origin = CGPointMake(0, 0)
+            })
+            
             
         }
         
