@@ -41,11 +41,11 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="later_icon" id="0du-ty-x2L">
-                                                        <rect key="frame" x="260" y="30" width="25" height="25"/>
+                                                        <rect key="frame" x="275" y="30" width="25" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="archive_icon" id="Liq-yh-lOR">
-                                                        <rect key="frame" x="30" y="30" width="25" height="25"/>
+                                                        <rect key="frame" x="15" y="30" width="25" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete_icon" id="Aoa-hd-CWV">
@@ -89,7 +89,7 @@
                     <connections>
                         <outlet property="archiveImg" destination="Liq-yh-lOR" id="QRP-Pz-cWd"/>
                         <outlet property="deleteImg" destination="Aoa-hd-CWV" id="EVi-5i-dXj"/>
-                        <outlet property="feedImage" destination="hJe-5O-QXo" id="7Gw-dt-w3E"/>
+                        <outlet property="feedImage" destination="hJe-5O-QXo" id="ecC-FW-QK8"/>
                         <outlet property="feedScrollView" destination="rs3-3F-KNp" id="UdR-qN-cX7"/>
                         <outlet property="feedView" destination="CDi-rj-NLw" id="9NP-hT-i28"/>
                         <outlet property="laterImg" destination="0du-ty-x2L" id="UnJ-Hm-RtH"/>

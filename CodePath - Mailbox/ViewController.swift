@@ -24,15 +24,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var feedView: UIView!
     @IBOutlet weak var zeroImage: UIImageView!
     @IBOutlet weak var searchImage: UIImageView!
-    @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var feedScrollView: UIScrollView!
+    @IBOutlet weak var feedImage: UIImageView!
     
-    var msgImgCenter: CGPoint!
+    var msgImgCenter: CGFloat!
     var laterX: CGFloat!
     var archiveX: CGFloat!
     var msgLocationX: CGFloat!
 
     // Set colours for UIColor
+    
     
     let gray = UIColor(red: 227/255, green: 227/255, blue: 227/255, alpha: 1)
     let brown = UIColor(red: 215/255, green: 165/255, blue: 120/255, alpha: 1)
@@ -49,6 +50,8 @@ class ViewController: UIViewController {
         
         laterImg.alpha = 0
         archiveImg.alpha = 0
+        listImg.alpha = 0
+        deleteImg.alpha = 0
 
         
     }
@@ -91,26 +94,29 @@ class ViewController: UIViewController {
             msgLocationX = gestureRecognizer.translationInView(msgImgView).x
             msgImg.frame.origin.x = msgLocationX
             
-            if (-160 <= msgLocationX) && (msgLocationX < -60) {
+            if (-260
+                <= msgLocationX) && (msgLocationX < -60) {
                 msgImgView.backgroundColor = yellow
                 laterImg.frame.origin.x = laterX + msgLocationX + 60
             }
             
-            if (-320
+            else if (-320
                 <= msgLocationX) && (msgLocationX < -160) {
                     msgImgView.backgroundColor = brown
-                    laterImg.frame.origin.x = laterX + msgLocationX + 60
+                    listImg.alpha = 1
+                    laterImg.alpha = 0
+                    listImg.frame.origin.x = laterX + msgLocationX + 60
             }
             
-            if (260 <= msgLocationX) && (msgLocationX < 60) {
+            else if (260 <= msgLocationX) && (msgLocationX < 60) {
                 msgImgView.backgroundColor = green
-                laterImg.frame.origin.x = laterX + msgLocationX + 60
+                laterImg.frame.origin.x = laterX + msgLocationX + 90
             }
             
-            if (320
+            else if (320
                 <= msgLocationX) && (msgLocationX < 160) {
                     msgImgView.backgroundColor = red
-                    laterImg.frame.origin.x = laterX + msgLocationX + 60
+                    laterImg.frame.origin.x = laterX + msgLocationX + 90
             }
             
             
@@ -119,17 +125,6 @@ class ViewController: UIViewController {
             // End of Pan Gesture
             
         else if gestureRecognizer.state == UIGestureRecognizerState.Ended {
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                if velocity.x >= self.msgImg.center.x + 260 {
-                    self.msgImg.center.x = 320
-                    self.deleteImg.alpha = 0
-                }
-                    
-                else if velocity.x <= self.msgLocationX {
-                    self.msgImg.center.x = -320
-                    self.laterImg.alpha = 0
-                }
-            })
             
             
         }
