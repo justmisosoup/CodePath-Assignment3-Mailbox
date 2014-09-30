@@ -37,7 +37,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list_icon" id="G7G-OY-awW">
-                                                        <rect key="frame" x="193" y="30" width="25" height="25"/>
+                                                        <rect key="frame" x="275" y="30" width="25" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="later_icon" id="0du-ty-x2L">
@@ -49,7 +49,7 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="delete_icon" id="Aoa-hd-CWV">
-                                                        <rect key="frame" x="94" y="30" width="25" height="25"/>
+                                                        <rect key="frame" x="15" y="30" width="25" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     </imageView>
                                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" id="KbF-4C-XO6">
@@ -83,6 +83,32 @@
                                 </segments>
                                 <color key="tintColor" red="0.33725490196078434" green="0.72549019607843135" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
+                            <imageView alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reschedule" id="sCR-Et-k3L">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Jsx-ua-i9k" appends="YES" id="39J-Bl-ErN"/>
+                                </connections>
+                            </imageView>
+                            <imageView alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list" id="QxF-WM-VEB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gZp-N1-hg3" appends="YES" id="RqE-lA-zZP"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="V4u-Du-RkW">
+                                <rect key="frame" x="271" y="26" width="42" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTapResetState:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GgI-SI-dCt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -94,9 +120,11 @@
                         <outlet property="feedView" destination="CDi-rj-NLw" id="9NP-hT-i28"/>
                         <outlet property="laterImg" destination="0du-ty-x2L" id="UnJ-Hm-RtH"/>
                         <outlet property="listImg" destination="G7G-OY-awW" id="oJJ-7G-zoV"/>
+                        <outlet property="listViewImg" destination="QxF-WM-VEB" id="O64-Vz-FrC"/>
                         <outlet property="msgImg" destination="KbF-4C-XO6" id="c0c-Ez-eoq"/>
                         <outlet property="msgImgView" destination="VRN-50-zIj" id="LFG-qh-YHh"/>
                         <outlet property="navImgView" destination="d9c-h5-TF3" id="fje-Nn-txR"/>
+                        <outlet property="rescheduleImg" destination="sCR-Et-k3L" id="e3t-aF-tRE"/>
                         <outlet property="searchImage" destination="rVu-ia-u0X" id="Qox-lE-Jje"/>
                         <outlet property="zeroImage" destination="ciB-VD-D9v" id="iLS-hj-FTy"/>
                     </connections>
@@ -107,6 +135,16 @@
                         <action selector="onPanMsg:" destination="vXZ-lx-hvc" id="lok-OZ-Z1R"/>
                     </connections>
                 </panGestureRecognizer>
+                <tapGestureRecognizer id="Jsx-ua-i9k" userLabel="On Tap Dismiss Reschedule">
+                    <connections>
+                        <action selector="onTapDismissReschedule:" destination="vXZ-lx-hvc" id="lmd-FU-s9G"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="gZp-N1-hg3" userLabel="On Tap Dismiss List">
+                    <connections>
+                        <action selector="onTapDismissList:" destination="vXZ-lx-hvc" id="i6I-Pv-OyC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="38" y="429"/>
         </scene>
@@ -117,10 +155,12 @@
         <image name="feed" width="320" height="1202"/>
         <image name="help_label" width="320" height="37"/>
         <image name="later_icon" width="25" height="25"/>
+        <image name="list" width="320" height="568"/>
         <image name="list_icon" width="25" height="25"/>
         <image name="mail_nav_icon" width="25" height="20"/>
         <image name="message" width="320" height="86"/>
         <image name="nav" width="320" height="65"/>
+        <image name="reschedule" width="320" height="568"/>
         <image name="search" width="320" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
