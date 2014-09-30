@@ -24,12 +24,12 @@ _Required_
 
 _Optional_
  
-* [] Optional: Panning from the edge should reveal the menu
-* [] Optional: If the menu is being revealed when the user lifts their finger, it should continue revealing.
-* [] Optional: If the menu is being hidden when the user lifts their finger, it should continue hiding.
-* [] Optional: Tapping on compose should animate to reveal the compose view.
-* [] Optional: Tapping the segmented control in the title should swipe views in from the left or right.
-* [] Optional: Shake to undo.
+* [ ] Optional: Panning from the edge should reveal the menu
+* [ ] Optional: If the menu is being revealed when the user lifts their finger, it should continue revealing.
+* [ ] Optional: If the menu is being hidden when the user lifts their finger, it should continue hiding.
+* [ ] Optional: Tapping on compose should animate to reveal the compose view.
+* [ ] Optional: Tapping the segmented control in the title should swipe views in from the left or right.
+* [ ] Optional: Shake to undo.
 
 
 
