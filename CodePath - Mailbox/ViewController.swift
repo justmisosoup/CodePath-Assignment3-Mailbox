@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchImage: UIImageView!
     @IBOutlet weak var feedScrollView: UIScrollView!
     @IBOutlet weak var feedImage: UIImageView!
+    @IBOutlet weak var searchView: UIView!
     
     var msgImgCenter: CGFloat!
     var laterX: CGFloat!
@@ -172,33 +173,50 @@ class ViewController: UIViewController {
                 // SWIPE TO THE RIGHT
                 
                 msgImgView.backgroundColor = green
+                archiveImg.alpha = 0
                 
-//                UIView.animateWithDuration(0.9,
-//                    animations: {
-//                        self.msgImg.frame.origin.x = self.msgImg.frame.size.width
-//                    },
-//                    completion: { _ in
-//
-//                    }
-//                )
-                
-                UIView.animateWithDuration(0.9,
+                UIView.animateWithDuration(0.3,
                     animations: {
-                        self.feedImage.transform = CGAffineTransformMakeTranslation(0, -self.msgImg.frame.size.height)
-                        self.listViewImg.alpha = 0
+                        self.msgImg.frame.origin.x = self.msgImg.frame.size.width
+                        self.archiveImg.transform = CGAffineTransformMakeTranslation(self.feedView.frame.size.width - 60, 0)
                     },
                     completion: { _ in
-                        self.msgImgView.removeFromSuperview()
-                    })
+                        UIView.animateWithDuration(0.9,
+                            animations: {
+                                self.msgImgView.transform = CGAffineTransformMakeTranslation(0, -self.msgImgView.frame.size.height)
+                                self.feedImage.transform = CGAffineTransformMakeTranslation(0, -self.msgImg.frame.size.height)
+                                self.listViewImg.alpha = 0
+                            },
+                            completion: { _ in
+                                self.msgImgView.removeFromSuperview()
+                        })
+                    }
+                )
+                
             } else if (160 <= translation.x) && (translation.x < 320) {
                 // DRAG AND RELEASE TO THE RIGHT
                 msgImgView.backgroundColor = red
-                UIView.animateWithDuration(0.9, animations: { () -> Void in
-                    self.feedImage.transform = CGAffineTransformMakeTranslation(0, -self.msgImg.frame.size.height)
-                    self.msgImgView.removeFromSuperview()
-                    self.listViewImg.alpha = 0
-                })
-            
+                deleteImg.alpha = 0
+                archiveImg.alpha = 0
+
+                UIView.animateWithDuration(0.1,
+                    animations: {
+                        self.msgImg.frame.origin.x = self.msgImg.frame.size.width
+                        self.deleteImg.transform = CGAffineTransformMakeTranslation(self.feedView.frame.size.width - 60, 0)
+                    },
+                    completion: { _ in
+                        UIView.animateWithDuration(0.9,
+                            animations: {
+                                self.msgImgView.transform = CGAffineTransformMakeTranslation(0, -self.msgImgView.frame.size.height)
+                                self.feedImage.transform = CGAffineTransformMakeTranslation(0, -self.msgImg.frame.size.height)
+                                self.listViewImg.alpha = 0
+                            },
+                            completion: { _ in
+                                self.msgImgView.removeFromSuperview()
+                        })
+                    }
+                )
+                
             } else if (-360 <= translation.x) && (translation.x < -260) {
                 // DRAG AND RELEASE TO THE LEFT
                 msgImgView.backgroundColor = brown
@@ -243,9 +261,11 @@ class ViewController: UIViewController {
     
     @IBAction func onTapResetState(sender: UIButton) {
         self.feedView.addSubview(self.msgImgView)
+        self.feedView.bringSubviewToFront(self.searchView)
         
         UIView.animateWithDuration(0.2, animations: { () -> Void in
             self.feedImage.transform = CGAffineTransformIdentity
+            self.msgImgView.transform = CGAffineTransformIdentity
             self.msgImg.frame.origin = CGPointMake(0, 0)
             self.laterImg.transform = CGAffineTransformIdentity
             self.archiveImg.transform = CGAffineTransformIdentity

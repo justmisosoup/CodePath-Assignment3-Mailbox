@@ -20,18 +20,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1405"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feed" id="hJe-5O-QXo">
-                                                <rect key="frame" x="0.0" y="189" width="320" height="1202"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" id="rVu-ia-u0X">
-                                                <rect key="frame" x="0.0" y="53" width="320" height="42"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_label" id="ciB-VD-D9v">
-                                                <rect key="frame" x="0.0" y="8" width="320" height="37"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <view contentMode="scaleToFill" id="VRN-50-zIj">
                                                 <rect key="frame" x="0.0" y="103" width="320" height="86"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -63,6 +51,25 @@
                                                 </subviews>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="feed" id="hJe-5O-QXo">
+                                                <rect key="frame" x="0.0" y="189" width="320" height="1202"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" id="rfg-n8-QLw">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="103"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="help_label" id="ciB-VD-D9v">
+                                                        <rect key="frame" x="0.0" y="8" width="320" height="37"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" id="rVu-ia-u0X">
+                                                        <rect key="frame" x="0.0" y="53" width="320" height="42"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -91,14 +98,6 @@
                                     <outletCollection property="gestureRecognizers" destination="Jsx-ua-i9k" appends="YES" id="39J-Bl-ErN"/>
                                 </connections>
                             </imageView>
-                            <imageView alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list" id="QxF-WM-VEB">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="gZp-N1-hg3" appends="YES" id="RqE-lA-zZP"/>
-                                </connections>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" id="V4u-Du-RkW">
                                 <rect key="frame" x="271" y="26" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,6 +108,14 @@
                                     <action selector="onTapResetState:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="GgI-SI-dCt"/>
                                 </connections>
                             </button>
+                            <imageView alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list" id="QxF-WM-VEB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gZp-N1-hg3" appends="YES" id="RqE-lA-zZP"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -126,6 +133,7 @@
                         <outlet property="navImgView" destination="d9c-h5-TF3" id="fje-Nn-txR"/>
                         <outlet property="rescheduleImg" destination="sCR-Et-k3L" id="e3t-aF-tRE"/>
                         <outlet property="searchImage" destination="rVu-ia-u0X" id="Qox-lE-Jje"/>
+                        <outlet property="searchView" destination="rfg-n8-QLw" id="5Rj-oM-lLG"/>
                         <outlet property="zeroImage" destination="ciB-VD-D9v" id="iLS-hj-FTy"/>
                     </connections>
                 </viewController>
